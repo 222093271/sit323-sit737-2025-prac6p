@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: themed-web-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: themed-web
+  template:
+    metadata:
+      labels:
+        app: themed-web
+    spec:
+      containers:
+      - name: themed-web
+        image: my-themed-web-app:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
