@@ -370,6 +370,6 @@ Security was also emphasised by scanning the Docker image with Docker Scout. By 
 
 Finally, pushing the project to GitHub reinforced version control, collaboration, and transparency — all crucial aspects in professional DevOps workflows.
 
-This project not only cemented the technical skills in containerization and orchestration but also emphasized the importance of automation, configuration, and security in deploying scalable cloud-native applications.
+This project not only cemented the technical skills in containerization and orchestration but also emphasised the importance of automation, configuration, and security in deploying scalable cloud-native applications.
 
 
