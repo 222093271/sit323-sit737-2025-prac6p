@@ -8,7 +8,7 @@
 
 The objective of this task is to design and deploy a simple containerized Node.js web application onto a Kubernetes cluster. Kubernetes, often referred to as "K8s," is an open-source platform that automates the deployment, scaling, and operation of application containers. In this task, we leverage Kubernetes as a container orchestration platform to run our Node.js application efficiently and reliably.
 
-To begin with, we utilize an existing Node.js application developed in a previous task (Task 5.1P), which serves static files using Express.js. This application is then containerized using Docker and built into a Docker image named my-themed-web-app. We ensure that the container is healthy and ready to serve traffic by integrating health checks in the docker-compose.yml configuration. After testing the container locally, we proceed to set up a local Kubernetes cluster using Docker Desktop, enabling Kubernetes functionality for development purposes.
+To begin with, we utilise an existing Node.js application developed in a previous task (Task 5.1P), which serves static files using Express.js. This application is then containerized using Docker and built into a Docker image named my-themed-web-app. We ensure that the container is healthy and ready to serve traffic by integrating health checks in the docker-compose.yml configuration. After testing the container locally, we proceed to set up a local Kubernetes cluster using Docker Desktop, enabling Kubernetes functionality for development purposes.
 
 Subsequently, we write Kubernetes deployment and service configuration files (deployment.yaml and service.yaml) to define how the containerized application should be deployed and accessed. Finally, we push all project files, including source code, Dockerfiles, Kubernetes YAML files, and documentation, to a GitHub repository for evaluation.
 
@@ -17,7 +17,7 @@ Subsequently, we write Kubernetes deployment and service configuration files (de
 
 ## Project Setup & Prerequisites
 
-Before beginning the Kubernetes deployment, it was essential to ensure that our local development environment was fully prepared with all the required tools. Since this task builds upon the work completed in Task 5.1P, we already had the foundational elements in place, such as the application.js, a working Dockerfile, and the basic folder structure for the Node.js application. The following tools were used to complete this task, each playing a vital role in the deployment process.
+Before beginning the Kubernetes deployment, it was essential to ensure that our local development environment was fully prepared with all the required tools. Since this task builds upon the work completed in Task 5.1P, we already had the foundational elements in place, such as the `application.js`, a working `Dockerfile`, and the basic folder structure for the Node.js application. The following tools were used to complete this task, each playing a vital role in the deployment process.
 
 
 ### Visual Studio Code (VS Code)
@@ -27,9 +27,9 @@ We opened our project directory (sit323-sit737-2025-prac6p) in VS Code and used 
 
 ### 🐳 Docker
 
-Docker is a platform that allows developers to package applications into containers — lightweight, standalone, and executable units that include everything needed to run a piece of software. In Task 5.1P, we already built a Docker image for our Node.js application using the provided Dockerfile. This image was named my-themed-web-app.
+Docker is a platform that allows developers to package applications into containers — lightweight, standalone, and executable units that include everything needed to run a piece of software. In Task 5.1P, we already built a Docker image for our Node.js application using the provided `Dockerfile`. This image was named `my-themed-web-app`.
 Docker was also used to run and test the application locally before deploying it to Kubernetes. This allowed us to ensure that the application was functioning correctly inside a container environment.
-We used Docker Desktop, which also provides a graphical interface to manage containers and settings. Importantly, Docker Desktop includes a built-in Kubernetes engine, which we enabled to simulate a local Kubernetes cluster.
+We used `Docker Desktop`, which also provides a graphical interface to manage containers and settings. Importantly, Docker Desktop includes a built-in Kubernetes engine, which we enabled to simulate a local Kubernetes cluster.
 
 
 ### ☸️ Kubernetes
@@ -47,11 +47,11 @@ We deployed the application using two main Kubernetes resources:
 
 ### 🔧 kubectl – The Kubernetes CLI
 
-kubectl is the command-line interface for interacting with Kubernetes clusters. It is used to apply configuration files, inspect running services, view logs, and manage the entire Kubernetes environment from the terminal.
+`kubectl` is the command-line interface for interacting with Kubernetes clusters. It is used to apply configuration files, inspect running services, view logs, and manage the entire Kubernetes environment from the terminal.
 
 We used kubectl to:
-*	Apply our Kubernetes deployment and service configuration files (deployment.yaml and service.yaml)
-*	Check the status of pods and services (kubectl get pods, kubectl get services)
+*	Apply our Kubernetes deployment and service configuration files (`deployment.yaml` and `service.yaml`)
+*	Check the status of pods and services (`kubectl get pods`, `kubectl get services`)
 *	Debug or troubleshoot issues during deployment
 
 When Docker Desktop is installed and Kubernetes is enabled, kubectl is automatically made available in your system’s PATH, so no separate installation is needed.
@@ -246,7 +246,7 @@ With these YAML files created and validated, we were now ready to apply them usi
 
 ## 🚀 Deploying to Kubernetes and Accessing the Application
 
-After preparing our Kubernetes configuration files (deployment.yaml and service.yaml), we moved on to deploying the application into our Kubernetes cluster. This phase involved applying the configuration using kubectl, verifying that the pods and services were running, and finally testing the application in the browser.
+After preparing our Kubernetes configuration files (`deployment.yaml` and `service.yaml`), we moved on to deploying the application into our Kubernetes cluster. This phase involved applying the configuration using kubectl, verifying that the pods and services were running, and finally testing the application in the browser.
 
 ### 🔄 Applying Kubernetes Configurations
 Using the kubectl command-line tool, we executed the following commands in the terminal to apply our deployment and service definitions:
@@ -261,7 +261,7 @@ These commands instructed Kubernetes to:
 *	Expose the application on NodePort 30080, making it accessible via http://localhost:30080. 
 
 
-### 📦 Verifying Running Pods
+### Verifying Running Pods
 To check if the application pods were successfully created and running, we used:
 ```
 kubectl get pods
@@ -283,7 +283,7 @@ This command lists all the Kubernetes services and their ports.
 
 ![kubectl get services](Screenshots/image12.png)
 
-The NodePort configuration exposes internal port 3000 to external port 30080, allowing us to access the app from our browser via http://localhost:30080.
+The NodePort configuration exposes internal port `3000` to external port `30080`, allowing us to access the app from our browser via http://localhost:30080.
 
 
 ### ✅ Accessing the Application in Browser
